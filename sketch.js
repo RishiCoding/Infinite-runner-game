@@ -17,7 +17,7 @@ function preload(){
 function setup(){
   createCanvas(600, 800);
   
-  tower=createSprite(300, 200, 20, 20);
+  tower=createSprite(0, 200, 20, 20);
   tower.addImage(towerImage);
   tower.scale=1;
   
@@ -33,8 +33,8 @@ function setup(){
 function draw(){
   background("black");
   if(gameState=="play"){
-  camera.position.y=displayHeight/2;  
-  camera.position.x=displayWidth/2;
+  camera.position.y=camera.position.y-1;  
+  camera.position.x=0;
   if (keyDown("space")){
     ghost.velocityY=-4;
   }
@@ -66,7 +66,7 @@ function draw(){
     fill("yellow");
     stroke("yellow");
     textSize(50)
-    text("GAME OVER", 150, 300);
+    text("GAME OVER", -150, 300);
   }
   
 }  
